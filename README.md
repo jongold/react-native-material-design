@@ -1,4 +1,4 @@
-# React Native Material Design
+# React Primitives Material Design
 
 [![npm](https://img.shields.io/npm/v/react-native-material-design.svg)](https://www.npmjs.com/package/react-native-material-design)
 [![Dependency Status](https://david-dm.org/react-native-material-design/react-native-material-design.svg)](https://david-dm.org/react-native-material-design/react-native-material-design.svg)
