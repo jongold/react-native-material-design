@@ -4,6 +4,7 @@
   "description": "React Native Material Design Components",
   "main": "lib/index.js",
   "scripts": {
+    "build": "babel ./src --out-dir ./lib --ignore __tests__/*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint ./lib"
   },
@@ -33,7 +34,10 @@
     "react-sketchapp": "^0.9.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-eslint": "^4.1.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-airbnb": "^2.2.3",
     "eslint": "^1.6.0",
     "eslint-plugin-react": "^3.5.1"
   }

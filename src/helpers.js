@@ -1,36 +1,28 @@
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.getColor = getColor;
-exports.isCompatible = isCompatible;
-
-require('react-native');
-
-var _reactPrimitives = require('react-primitives');
-
-var _config = require('./config');
+import 'react-native';
+import { Platform } from 'react-primitives';
+import { PRIMARY, COLOR } from './config';
 
 /**
  * Detect whether a color is a hex code/rgba or a paper element style
  * @param string
  * @returns {*}
  */
-function getColor(string) {
+export function getColor(string) {
     if (string) {
         if (string.indexOf('#') > -1 || string.indexOf('rgba') > -1) {
             return string;
         }
 
-        if (_config.COLOR[string]) {
-            return _config.COLOR[string].color;
+        if (COLOR[string]) {
+            return COLOR[string].color;
         }
 
-        if (_config.COLOR[String(string) + '500']) {
-            return _config.COLOR[String(string) + '500'].color;
+        if (COLOR[`${string}500`]) {
+            return COLOR[`${string}500`].color;
         }
     }
 
-    return _config.COLOR[String(_config.PRIMARY) + '500'].color;
+    return COLOR[`${PRIMARY}500`].color;
 }
 
 /**
@@ -38,8 +30,8 @@ function getColor(string) {
  * @param feature
  * @returns bool
  */
-function isCompatible(feature) {
-    var version = _reactPrimitives.Platform.Version;
+export function isCompatible(feature) {
+    const version = Platform.Version;
 
     switch (feature) {
         case 'TouchableNativeFeedback':
